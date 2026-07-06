@@ -420,6 +420,10 @@ select {
   font-weight: 600;
 }
 
+.form-hidden {
+  display: none;
+}
+
 .quote-form input,
 .quote-form select {
   width: 100%;
