@@ -179,7 +179,7 @@ select {
   gap: 0.9rem;
   padding: 1.4rem;
   background:
-    linear-gradient(180deg, rgba(255, 252, 246, 0.98), rgba(244, 236, 224, 0.96)),
+    linear-gradient(180deg, rgba(255, 252, 246, 0.86), rgba(244, 236, 224, 0.8)),
     linear-gradient(135deg, rgba(242, 176, 30, 0.12), transparent 56%);
 }
 
@@ -470,6 +470,7 @@ select {
   gap: 0.95rem;
   border-radius: 24px;
   padding: 1.3rem;
+  background: linear-gradient(180deg, rgba(255, 252, 246, 0.84), rgba(244, 236, 224, 0.78));
 }
 
 .final-grid .quote-form {
@@ -492,7 +493,7 @@ select {
   padding: 0.9rem 1rem;
   border-radius: 14px;
   border: 1px solid rgba(41, 31, 12, 0.14);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.58);
   color: var(--text);
 }
 
