@@ -115,7 +115,7 @@ select {
   display: block;
   width: 100%;
   margin-top: 0;
-  padding: 6.5rem 0 5.5rem;
+  padding: 5.5rem 0;
   background:
     linear-gradient(90deg, rgba(16, 13, 9, 0.78) 0%, rgba(16, 13, 9, 0.55) 42%, rgba(16, 13, 9, 0.18) 100%),
     url("welding.webp") center center / cover no-repeat;
@@ -123,10 +123,17 @@ select {
   overflow: hidden;
 }
 
-.hero-copy {
+.hero-inner {
   width: min(1180px, calc(100% - 3rem));
   margin: 0 auto;
-  max-width: 42rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 460px);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero-copy {
+  max-width: 40rem;
 }
 
 .hero h1,
@@ -160,6 +167,32 @@ select {
   flex-wrap: wrap;
   gap: 1rem;
   margin: 1.75rem 0 0.9rem;
+}
+
+.hero-form-wrap {
+  width: 100%;
+  max-width: 460px;
+  justify-self: end;
+}
+
+.hero-form-card {
+  gap: 0.9rem;
+  padding: 1.4rem;
+  background:
+    linear-gradient(180deg, rgba(255, 252, 246, 0.98), rgba(244, 236, 224, 0.96)),
+    linear-gradient(135deg, rgba(242, 176, 30, 0.12), transparent 56%);
+}
+
+.hero-form-card h3 {
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.hero-form-copy {
+  margin: 0;
+  color: var(--muted);
 }
 
 .microcopy {
@@ -203,20 +236,28 @@ select {
 }
 
 .section {
-  margin-top: 2.25rem;
-  padding: 2rem;
+  margin-top: 2.75rem;
+  padding: 2.35rem;
   border-radius: var(--radius);
 }
 
 .section-heading {
   max-width: 52rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.section-heading > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.section-heading > * + * {
+  margin-top: 0.9rem;
 }
 
 .reviews-summary-image {
   display: block;
   width: min(100%, 700px);
-  margin-top: 1rem;
   border-radius: 18px;
 }
 
@@ -242,7 +283,7 @@ select {
 .review-grid,
 .gallery-grid,
 .process-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .service-grid {
@@ -393,8 +434,25 @@ select {
 }
 
 .final-grid {
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
+  justify-items: end;
+}
+
+.final-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 620px);
+  gap: 2rem;
+  align-items: start;
+}
+
+.final-cta .section-heading {
+  max-width: 34rem;
+  margin-bottom: 0;
+}
+
+.final-cta .final-grid {
+  grid-column: 2;
 }
 
 .service-area-layout {
@@ -412,6 +470,10 @@ select {
   gap: 0.95rem;
   border-radius: 24px;
   padding: 1.3rem;
+}
+
+.final-grid .quote-form {
+  width: min(100%, 620px);
 }
 
 .quote-form label {
@@ -481,6 +543,40 @@ select {
   margin: 0.25rem 0;
 }
 
+.desktop-estimate-widget {
+  display: none;
+}
+
+.desktop-estimate-widget-card {
+  border: 1px solid rgba(41, 31, 12, 0.14);
+  border-radius: 22px;
+  padding: 1.1rem;
+  background: rgba(255, 252, 246, 0.94);
+  box-shadow: 0 20px 45px rgba(53, 35, 8, 0.18);
+  backdrop-filter: blur(14px);
+}
+
+.desktop-estimate-widget-card p {
+  margin: 0;
+}
+
+.desktop-estimate-widget-card p:first-child {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.desktop-estimate-widget-card p + p {
+  margin-top: 0.45rem;
+  color: var(--muted);
+}
+
+.desktop-estimate-actions {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 0.95rem;
+}
+
 .mobile-cta {
   position: fixed;
   left: 0;
@@ -522,8 +618,20 @@ select {
   pointer-events: auto;
 }
 
+@media (min-width: 981px) {
+  .desktop-estimate-widget {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 25;
+    display: block;
+    width: min(320px, calc(100vw - 3rem));
+  }
+}
+
 @media (max-width: 980px) {
-  .hero,
+  .hero-inner,
+  .final-cta,
   .final-grid,
   .service-area-layout,
   .stat-grid,
@@ -536,6 +644,19 @@ select {
 
   .hero {
     padding-top: 4.5rem;
+  }
+
+  .final-cta .final-grid {
+    grid-column: auto;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero-form-wrap {
+    max-width: 100%;
+    justify-self: stretch;
   }
 }
 
@@ -572,7 +693,7 @@ select {
       url("welding.webp") center center / cover no-repeat;
   }
 
-  .hero-copy {
+  .hero-inner {
     width: min(1180px, calc(100% - 2rem));
   }
 
