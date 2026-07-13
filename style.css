@@ -141,12 +141,16 @@ select {
   margin: 0;
   font-family: "Barlow Condensed", sans-serif;
   letter-spacing: 0.01em;
-  line-height: 0.98;
 }
 
 .hero h1 {
   max-width: 11ch;
   font-size: clamp(3.2rem, 8vw, 5.9rem);
+  line-height: 0.98;
+}
+
+.section h2 {
+  line-height: 1.06;
 }
 
 .hero-text,
@@ -252,12 +256,12 @@ select {
 }
 
 .section-heading > * + * {
-  margin-top: 0.9rem;
+  margin-top: 1.05rem;
 }
 
 .reviews-summary-image {
   display: block;
-  width: min(100%, 700px);
+  width: min(100%, 540px);
   border-radius: 18px;
 }
 
@@ -449,6 +453,34 @@ select {
 .final-cta .section-heading {
   max-width: 34rem;
   margin-bottom: 0;
+}
+
+.cta-checklist {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1.2rem 0 1.35rem;
+  padding: 0;
+  list-style: none;
+}
+
+.cta-checklist li {
+  position: relative;
+  padding-left: 1.65rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.cta-checklist li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #7f5600;
+  font-weight: 800;
+}
+
+.cta-call-button {
+  width: fit-content;
 }
 
 .final-cta .final-grid {
@@ -708,6 +740,10 @@ select {
   .hero-actions .button {
     width: 100%;
     max-width: 22rem;
+  }
+
+  .cta-call-button {
+    width: 100%;
   }
 
   .section {
