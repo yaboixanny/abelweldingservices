@@ -580,6 +580,12 @@ select {
   display: none;
 }
 
+.desktop-estimate-widget.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 .desktop-estimate-widget-card {
   border: 1px solid rgba(41, 31, 12, 0.14);
   border-radius: 22px;
@@ -659,6 +665,10 @@ select {
     z-index: 25;
     display: block;
     width: min(320px, calc(100vw - 3rem));
+    opacity: 0;
+    transform: translateY(1.5rem);
+    pointer-events: none;
+    transition: transform 180ms ease, opacity 180ms ease;
   }
 }
 
