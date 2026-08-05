@@ -11,8 +11,17 @@
       gtag("config", "AW-18290450782");
     </script>
     <script>
+      function updateTrackedPhoneNumbers(formatted_number, mobile_number) {
+        const phonePattern = /\(?954\)?[-.\s]*448[-.\s]*1197/g;
+        document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+          link.href = "tel:" + mobile_number;
+          link.textContent = link.textContent.replace(phonePattern, formatted_number);
+        });
+      }
+
       gtag("config", "AW-18290450782/YguZCLyflNAcEN7CyJFE", {
-        phone_conversion_number: "(954) 448-1197"
+        phone_conversion_number: "(954) 448-1197",
+        phone_conversion_callback: updateTrackedPhoneNumbers
       });
     </script>
     <meta charset="UTF-8" />
@@ -85,11 +94,11 @@
           <div class="hero-copy">
             <p class="eyebrow">On-site welding in Fort Lauderdale</p>
             <h1>Mobile Welder in Fort Lauderdale</h1>
-            <p class="hero-text">
-              Abel Welding Services brings welding support directly to your property, job site,
-              storefront, facility, or active project. We handle on-site repairs, fabrication
-              adjustments, structural work, and field welding across Fort Lauderdale.
-            </p>
+            <ul class="hero-text hero-bullets">
+              <li>On-site welding for repairs, structural work, and field modifications</li>
+              <li>Fast support for homes, facilities, storefronts, and active job sites</li>
+              <li>Free estimates with clear scheduling and pricing up front</li>
+            </ul>
             <div class="hero-actions">
               <a class="button button-primary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call Now: (954) 448-1197</a>
             </div>
@@ -156,7 +165,7 @@
       <section class="section services">
         <div class="section-heading">
           <p class="eyebrow">Mobile welding services</p>
-          <h2>On-Site Welding Solutions</h2>
+          <h2>Mobile Welding in Fort Lauderdale</h2>
           <p>
             Mobile welding support for contractors, businesses, homeowners, and property managers
             who need the work done where the metal already is.
@@ -164,43 +173,59 @@
         </div>
         <div class="service-grid">
           <article class="service-card service-card-featured">
-            <p class="service-kicker">Fort Lauderdale Mobile Welder</p>
-            <h3>Built for field repairs, urgent jobs, and on-site fabrication support</h3>
+            <p class="service-kicker">On-Site Help. Fast Turnaround.</p>
+            <h3>Need a welder at your property or job site instead of hauling the metal somewhere else?</h3>
             <p>
-              Abel Welding Services brings professional welding equipment and practical job-site
-              coordination directly to your location.
+              Mobile welding support across Fort Lauderdale for repairs, field adjustments, structural work,
+              and urgent metal issues that need to be handled on site.
             </p>
+            <ul class="service-feature-list">
+              <li>Repairs and fabrication at your location</li>
+              <li>Residential, commercial, and contractor support</li>
+              <li>Free estimates before work begins</li>
+            </ul>
+            <div class="service-feature-actions">
+              <a class="button button-primary" href="#quote-anchor">Request Estimate</a>
+              <a class="button button-secondary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call Now</a>
+            </div>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">01</span><p class="service-label">Fast response</p></div>
-            <h3>On-Site Repairs</h3>
-            <p>Welding repairs for damaged gates, railings, structural components, and metal features that cannot be removed easily.</p>
+            <div class="service-card-top"><span class="service-index">01</span><p class="service-label">Fixed metalwork repaired in place</p></div>
+            <h3>On-Site Repair Welding</h3>
+            <p>Broken metalwork repaired at your location when it is too large, too fixed, or too urgent to move.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">02</span><p class="service-label">Active job sites</p></div>
+            <div class="service-card-top"><span class="service-index">02</span><p class="service-label">Builders, crews, and active sites</p></div>
             <h3>Construction Welding Support</h3>
             <p>Field welding for builders, contractors, and crews who need adjustments, reinforcements, or install support.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">03</span><p class="service-label">Commercial-ready</p></div>
+            <div class="service-card-top"><span class="service-index">03</span><p class="service-label">Facilities, storefronts, and managed sites</p></div>
             <h3>Property and Facility Welding</h3>
             <p>On-site welding for commercial buildings, storefronts, industrial properties, and managed facilities.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">04</span><p class="service-label">Fixed-location work</p></div>
+            <div class="service-card-top"><span class="service-index">04</span><p class="service-label">Posts, frames, and structural steel</p></div>
             <h3>Structural Field Welding</h3>
             <p>Support for steel posts, frames, supports, stair structures, and other fixed metal assemblies.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">05</span><p class="service-label">Field modifications</p></div>
+            <div class="service-card-top"><span class="service-index">05</span><p class="service-label">Solve fitment issues on site</p></div>
             <h3>On-Site Fabrication Adjustments</h3>
-            <p>Modifications, fitment changes, and corrections completed at the job site when plans meet real conditions.</p>
+            <p>Modifications, fitment changes, and corrections completed on site when plans meet real conditions.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">06</span><p class="service-label">Residential and commercial</p></div>
+            <div class="service-card-top"><span class="service-index">06</span><p class="service-label">Homes, businesses, and access points</p></div>
             <h3>Gate, Fence, and Railing Welding</h3>
             <p>Mobile welding for access points, perimeter features, and safety rail systems at homes and commercial properties.</p>
           </article>
+        </div>
+        <div class="services-cta-bar">
+          <p>Need welding at your location? Tell us where the job is and what needs to be repaired, reinforced, or adjusted.</p>
+          <div class="services-cta-actions">
+            <a class="button button-primary" href="#quote-anchor">Get My Estimate</a>
+            <a class="button button-secondary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call (954) 448-1197</a>
+          </div>
         </div>
       </section>
 

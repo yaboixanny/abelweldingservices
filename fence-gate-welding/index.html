@@ -11,8 +11,17 @@
       gtag("config", "AW-18290450782");
     </script>
     <script>
+      function updateTrackedPhoneNumbers(formatted_number, mobile_number) {
+        const phonePattern = /\(?954\)?[-.\s]*448[-.\s]*1197/g;
+        document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+          link.href = "tel:" + mobile_number;
+          link.textContent = link.textContent.replace(phonePattern, formatted_number);
+        });
+      }
+
       gtag("config", "AW-18290450782/YguZCLyflNAcEN7CyJFE", {
-        phone_conversion_number: "(954) 448-1197"
+        phone_conversion_number: "(954) 448-1197",
+        phone_conversion_callback: updateTrackedPhoneNumbers
       });
     </script>
     <meta charset="UTF-8" />
@@ -85,11 +94,11 @@
           <div class="hero-copy">
             <p class="eyebrow">Fence and gate welding in Fort Lauderdale</p>
             <h1>Fence and Gate Welding in Fort Lauderdale</h1>
-            <p class="hero-text">
-              Abel Welding Services repairs, reinforces, and fabricates metal gates, hinges,
-              fence sections, posts, and entry systems for homes, businesses, and managed
-              properties across Fort Lauderdale.
-            </p>
+            <ul class="hero-text hero-bullets">
+              <li>Repairs for sagging gates, broken hinges, and damaged fence sections</li>
+              <li>Reinforcement and custom gate work for homes and businesses</li>
+              <li>Free estimates with clear pricing before welding starts</li>
+            </ul>
             <div class="hero-actions">
               <a class="button button-primary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call Now: (954) 448-1197</a>
             </div>
@@ -156,51 +165,67 @@
       <section class="section services">
         <div class="section-heading">
           <p class="eyebrow">Gate and fence services</p>
-          <h2>Fence and Gate Welding Solutions</h2>
+          <h2>Fence and Gate Welding in Fort Lauderdale</h2>
           <p>
-            Welding support for broken gates, worn hinges, damaged fence sections, misaligned frames,
-            and custom metal access-point work across Fort Lauderdale.
+            Repairs, reinforcement, and custom welding for broken gates, worn hinges, damaged fence
+            sections, and metal access points across Fort Lauderdale.
           </p>
         </div>
         <div class="service-grid">
           <article class="service-card service-card-featured">
-            <p class="service-kicker">Fort Lauderdale Gate Welding</p>
-            <h3>Built for repairs, reinforcement, custom fabrication, and access-point upgrades</h3>
+            <p class="service-kicker">Repairs First. Reliability Daily.</p>
+            <h3>Need a gate or fence repaired so it opens, closes, and holds up the way it should?</h3>
             <p>
-              Abel Welding Services helps restore function, strength, and reliability to gates,
-              fences, and entry systems with practical welding solutions.
+              Practical welding solutions for Fort Lauderdale homes, businesses, and managed properties
+              dealing with broken gates, damaged fence sections, or failing hardware.
             </p>
+            <ul class="service-feature-list">
+              <li>Gate, hinge, latch, and frame repairs</li>
+              <li>Residential and commercial properties</li>
+              <li>Free estimates before work begins</li>
+            </ul>
+            <div class="service-feature-actions">
+              <a class="button button-primary" href="#quote-anchor">Request Estimate</a>
+              <a class="button button-secondary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call Now</a>
+            </div>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">01</span><p class="service-label">Repair-focused</p></div>
+            <div class="service-card-top"><span class="service-index">01</span><p class="service-label">Restore movement and alignment</p></div>
             <h3>Gate Repair Welding</h3>
-            <p>Repairs for cracked joints, broken welds, sagging gates, and damaged metal frames.</p>
+            <p>Cracked joints, broken welds, sagging gates, and damaged metal frames repaired and realigned.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">02</span><p class="service-label">High-use hardware</p></div>
+            <div class="service-card-top"><span class="service-index">02</span><p class="service-label">High-stress connection points</p></div>
             <h3>Hinge and Latch Welding</h3>
-            <p>Welding and reinforcement for hinges, latch points, and other high-stress gate hardware connections.</p>
+            <p>Hinges, latch points, and high-use hardware reinforced so the gate works reliably again.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">03</span><p class="service-label">Perimeter repairs</p></div>
+            <div class="service-card-top"><span class="service-index">03</span><p class="service-label">Panels, rails, and posts</p></div>
             <h3>Fence Section Welding</h3>
-            <p>Metal fence repairs for detached sections, weakened posts, damaged rails, and broken connections.</p>
+            <p>Detached fence sections, weakened posts, damaged rails, and broken connections repaired and reinforced.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">04</span><p class="service-label">Strength and stability</p></div>
+            <div class="service-card-top"><span class="service-index">04</span><p class="service-label">Extra support where it keeps failing</p></div>
             <h3>Gate Reinforcement</h3>
-            <p>Additional support and reinforcement for gates that sag, twist, drag, or fail under repeated use.</p>
+            <p>Additional support for gates that sag, twist, drag, or fail under repeated daily use.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">05</span><p class="service-label">Made to fit</p></div>
-            <h3>Custom Metal Gates</h3>
-            <p>Fabrication and welding support for custom metal gate components, frames, and replacement sections.</p>
+            <div class="service-card-top"><span class="service-index">05</span><p class="service-label">Built around the opening and layout</p></div>
+            <h3>Custom Metal Gate Work</h3>
+            <p>Custom gate components, frames, and replacement sections fabricated to match the property and access point.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">06</span><p class="service-label">Residential and commercial</p></div>
+            <div class="service-card-top"><span class="service-index">06</span><p class="service-label">Homes, businesses, and managed sites</p></div>
             <h3>Access-Point Welding</h3>
-            <p>Welding for entry gates, service gates, security barriers, and access-control related metalwork.</p>
+            <p>Entry gates, service gates, security barriers, and related access-point metalwork repaired or reinforced.</p>
           </article>
+        </div>
+        <div class="services-cta-bar">
+          <p>Need a gate, hinge, fence section, or entry frame repaired? Tell us what’s failing and where it is.</p>
+          <div class="services-cta-actions">
+            <a class="button button-primary" href="#quote-anchor">Get My Estimate</a>
+            <a class="button button-secondary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call (954) 448-1197</a>
+          </div>
         </div>
       </section>
 

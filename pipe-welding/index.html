@@ -11,8 +11,17 @@
       gtag("config", "AW-18290450782");
     </script>
     <script>
+      function updateTrackedPhoneNumbers(formatted_number, mobile_number) {
+        const phonePattern = /\(?954\)?[-.\s]*448[-.\s]*1197/g;
+        document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+          link.href = "tel:" + mobile_number;
+          link.textContent = link.textContent.replace(phonePattern, formatted_number);
+        });
+      }
+
       gtag("config", "AW-18290450782/YguZCLyflNAcEN7CyJFE", {
-        phone_conversion_number: "(954) 448-1197"
+        phone_conversion_number: "(954) 448-1197",
+        phone_conversion_callback: updateTrackedPhoneNumbers
       });
     </script>
     <meta charset="UTF-8" />
@@ -85,11 +94,11 @@
           <div class="hero-copy">
             <p class="eyebrow">High-pressure pipe welding in Fort Lauderdale</p>
             <h1>High-Pressure Pipe Welding in Fort Lauderdale</h1>
-            <p class="hero-text">
-              Abel Welding Services provides high-pressure pipe welding in Fort Lauderdale for
-              industrial systems, heavy-duty piping, commercial facilities, and projects that
-              demand strong, dependable weld quality.
-            </p>
+            <ul class="hero-text hero-bullets">
+              <li>High-pressure pipe welding for industrial and heavy-duty systems</li>
+              <li>On-site support for repairs, fit-up, and field installation work</li>
+              <li>Free estimates with clear scope and pricing before the weld starts</li>
+            </ul>
             <div class="hero-actions">
               <a class="button button-primary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call Now: (954) 448-1197</a>
             </div>
@@ -156,51 +165,67 @@
       <section class="section services">
         <div class="section-heading">
           <p class="eyebrow">Pipe welding services</p>
-          <h2>High-Pressure Pipe Welding Solutions</h2>
+          <h2>Pipe Welding in Fort Lauderdale</h2>
           <p>
             Welding support for industrial clients, contractors, facilities, and heavy-duty piping
-            projects that require precise, reliable weld work.
+            projects that require precise fit-up and dependable weld quality.
           </p>
         </div>
         <div class="service-grid">
           <article class="service-card service-card-featured">
-            <p class="service-kicker">Fort Lauderdale Pipe Welding</p>
-            <h3>Built for high-pressure pipe systems, industrial work, and heavy-duty field welding</h3>
+            <p class="service-kicker">Precision Fit-Up. Dependable Weld Quality.</p>
+            <h3>Need pipe welding that can hold up under pressure, field conditions, and demanding system requirements?</h3>
             <p>
-              Abel Welding Services supports demanding pipe welding work with a focus on strength,
-              consistency, and fit for high-performance environments.
+              Pipe welding support across Fort Lauderdale for industrial systems, heavy-duty piping,
+              commercial facilities, and field work that needs strong, consistent results.
             </p>
+            <ul class="service-feature-list">
+              <li>High-pressure and industrial pipe welding</li>
+              <li>Repairs, fit-up, and field support</li>
+              <li>Free estimates before work begins</li>
+            </ul>
+            <div class="service-feature-actions">
+              <a class="button button-primary" href="#quote-anchor">Request Estimate</a>
+              <a class="button button-secondary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call Now</a>
+            </div>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">01</span><p class="service-label">High-demand systems</p></div>
+            <div class="service-card-top"><span class="service-index">01</span><p class="service-label">Built for pressure and durability</p></div>
             <h3>High-Pressure Pipe Welding</h3>
-            <p>Welding support for high-pressure pipe assemblies where durability and weld integrity matter.</p>
+            <p>Pipe welding for high-pressure assemblies where durability and weld integrity matter most.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">02</span><p class="service-label">Industrial-ready</p></div>
+            <div class="service-card-top"><span class="service-index">02</span><p class="service-label">Facilities, plants, and heavy-duty systems</p></div>
             <h3>Industrial Pipe Welding</h3>
             <p>Pipe welding for industrial environments, plant systems, commercial facilities, and heavy-duty operations.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">03</span><p class="service-label">Repair and replacement</p></div>
+            <div class="service-card-top"><span class="service-index">03</span><p class="service-label">Leaks, damage, and weak sections</p></div>
             <h3>Pipe Repair Welding</h3>
-            <p>Welding repairs for damaged pipe sections, reinforcements, and problem areas in metal piping systems.</p>
+            <p>Repairs for damaged pipe sections, reinforcements, and problem areas in metal piping systems.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">04</span><p class="service-label">Field support</p></div>
+            <div class="service-card-top"><span class="service-index">04</span><p class="service-label">Handled where the system is installed</p></div>
             <h3>On-Site Pipe Welding</h3>
             <p>Pipe welding at the project site when the assembly cannot be moved or needs field installation support.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">05</span><p class="service-label">Fabrication alignment</p></div>
+            <div class="service-card-top"><span class="service-index">05</span><p class="service-label">Alignment, joining, and assembly</p></div>
             <h3>Pipe Fit-Up and Welding</h3>
             <p>Support for pipe fit-up, joining, alignment, and welded assembly work on demanding projects.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">06</span><p class="service-label">Commercial and contractor</p></div>
+            <div class="service-card-top"><span class="service-index">06</span><p class="service-label">Large scopes and field coordination</p></div>
             <h3>Heavy-Duty Pipe System Support</h3>
-            <p>Welding support for larger pipe-related scopes involving industrial structures, commercial systems, and contractor-led jobs.</p>
+            <p>Support for larger pipe-related scopes involving industrial structures, commercial systems, and contractor-led jobs.</p>
           </article>
+        </div>
+        <div class="services-cta-bar">
+          <p>Need pipe welding for a repair, fit-up, or high-pressure system? Tell us the pipe type, job environment, and timeline.</p>
+          <div class="services-cta-actions">
+            <a class="button button-primary" href="#quote-anchor">Get My Estimate</a>
+            <a class="button button-secondary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call (954) 448-1197</a>
+          </div>
         </div>
       </section>
 

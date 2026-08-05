@@ -166,6 +166,32 @@ select {
   color: rgba(255, 247, 234, 0.88);
 }
 
+.hero-bullets {
+  padding: 0;
+  list-style: none;
+}
+
+.hero-bullets li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.hero-bullets li + li {
+  margin-top: 0.55rem;
+}
+
+.hero-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.46rem;
+  height: 0.46rem;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(242, 176, 30, 0.16);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -356,6 +382,41 @@ select {
   color: inherit;
 }
 
+.service-feature-list {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-feature-list li {
+  position: relative;
+  padding-left: 1.35rem;
+  color: rgba(255, 247, 234, 0.92);
+}
+
+.service-feature-list li + li {
+  margin-top: 0.45rem;
+}
+
+.service-feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: #ffd36c;
+  box-shadow: 0 0 0 4px rgba(255, 211, 108, 0.14);
+}
+
+.service-feature-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.15rem;
+}
+
 .service-kicker,
 .service-label {
   margin: 0;
@@ -397,6 +458,32 @@ select {
 
 .service-card p:last-child {
   margin-bottom: 0;
+}
+
+.services-cta-bar {
+  margin-top: 1rem;
+  padding: 1.25rem 1.35rem;
+  border-radius: 20px;
+  border: 1px solid rgba(41, 31, 12, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 241, 0.96), rgba(244, 236, 224, 0.94)),
+    linear-gradient(135deg, rgba(242, 176, 30, 0.1), transparent 60%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.services-cta-bar p {
+  margin: 0;
+  max-width: 42rem;
+  font-weight: 600;
+}
+
+.services-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .gallery-card {
@@ -701,6 +788,11 @@ select {
     max-width: 100%;
     justify-self: stretch;
   }
+
+  .services-cta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 720px) {
@@ -733,7 +825,7 @@ select {
   }
 
   .hero {
-    padding: 4rem 0;
+    padding: 2rem 0 4rem;
     background:
       linear-gradient(180deg, rgba(16, 13, 9, 0.72) 0%, rgba(16, 13, 9, 0.45) 100%),
       url("welding.webp") center center / cover no-repeat;
@@ -750,6 +842,16 @@ select {
   .hero-actions .button {
     width: 100%;
     max-width: 22rem;
+  }
+
+  .service-feature-actions,
+  .services-cta-actions {
+    width: 100%;
+  }
+
+  .service-feature-actions .button,
+  .services-cta-actions .button {
+    width: 100%;
   }
 
   .cta-call-button {

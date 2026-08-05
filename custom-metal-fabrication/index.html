@@ -11,8 +11,17 @@
       gtag("config", "AW-18290450782");
     </script>
     <script>
+      function updateTrackedPhoneNumbers(formatted_number, mobile_number) {
+        const phonePattern = /\(?954\)?[-.\s]*448[-.\s]*1197/g;
+        document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+          link.href = "tel:" + mobile_number;
+          link.textContent = link.textContent.replace(phonePattern, formatted_number);
+        });
+      }
+
       gtag("config", "AW-18290450782/YguZCLyflNAcEN7CyJFE", {
-        phone_conversion_number: "(954) 448-1197"
+        phone_conversion_number: "(954) 448-1197",
+        phone_conversion_callback: updateTrackedPhoneNumbers
       });
     </script>
     <meta charset="UTF-8" />
@@ -85,11 +94,11 @@
           <div class="hero-copy">
             <p class="eyebrow">Fort Lauderdale custom metal fabrication</p>
             <h1>Custom Metal Fabrication in Fort Lauderdale</h1>
-            <p class="hero-text">
-              Abel Welding Services builds made-to-fit metal components, frames, supports,
-              stair parts, railings, and one-off fabrication pieces for residential,
-              commercial, and contractor projects across Fort Lauderdale.
-            </p>
+            <ul class="hero-text hero-bullets">
+              <li>Custom brackets, rails, frames, and supports built to fit</li>
+              <li>Steel and aluminum fabrication for homes, businesses, and contractors</li>
+              <li>Free estimates with clear pricing before the build starts</li>
+            </ul>
             <div class="hero-actions">
               <a class="button button-primary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call Now: (954) 448-1197</a>
             </div>
@@ -161,51 +170,67 @@
       <section class="section services">
         <div class="section-heading">
           <p class="eyebrow">Fabrication services</p>
-          <h2>Custom Metal Fabrication Solutions</h2>
+          <h2>Custom Metal Fabrication in Fort Lauderdale</h2>
           <p>
-            Fabrication support for property owners, builders, designers, and commercial clients
-            who need practical metalwork built to fit the job.
+            Made-to-fit metalwork for property owners, builders, designers, and commercial clients
+            who need durable fabrication that matches the job requirements.
           </p>
         </div>
         <div class="service-grid">
           <article class="service-card service-card-featured">
-            <p class="service-kicker">Fort Lauderdale Fabrication</p>
-            <h3>Built for custom projects, repairs, upgrades, and contractor support</h3>
+            <p class="service-kicker">Built To Fit. Built To Last.</p>
+            <h3>Need custom metalwork fabricated for the way the project actually needs to function?</h3>
             <p>
-              We fabricate metal components with attention to fit, durability, and job-site
-              coordination so the finished work performs the way it should.
+              Custom fabrication support across Fort Lauderdale for one-off parts, structural components,
+              rail systems, and job-site metalwork that needs a clean, practical fit.
             </p>
+            <ul class="service-feature-list">
+              <li>Steel and aluminum fabrication</li>
+              <li>Residential, commercial, and contractor jobs</li>
+              <li>Free estimates before fabrication begins</li>
+            </ul>
+            <div class="service-feature-actions">
+              <a class="button button-primary" href="#quote-anchor">Request Estimate</a>
+              <a class="button button-secondary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call Now</a>
+            </div>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">01</span><p class="service-label">Made to fit</p></div>
-            <h3>Custom Brackets and Supports</h3>
-            <p>Fabrication for brackets, plates, posts, frames, and support components built to job specs.</p>
+            <div class="service-card-top"><span class="service-index">01</span><p class="service-label">Built around exact dimensions</p></div>
+            <h3>Custom Brackets &amp; Supports</h3>
+            <p>Brackets, plates, posts, and support pieces fabricated to match the real installation conditions.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">02</span><p class="service-label">Interior and exterior</p></div>
-            <h3>Stair and Railing Fabrication</h3>
-            <p>Custom-built stair structures, rail systems, and handrail components for homes and businesses.</p>
+            <div class="service-card-top"><span class="service-index">02</span><p class="service-label">Interior and exterior metalwork</p></div>
+            <h3>Stairs &amp; Rail Fabrication</h3>
+            <p>Custom stair structures, rail systems, and handrail components built for homes and commercial properties.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">03</span><p class="service-label">Commercial-ready</p></div>
+            <div class="service-card-top"><span class="service-index">03</span><p class="service-label">Structural components and reinforcements</p></div>
             <h3>Structural Fabrication</h3>
-            <p>Steel fabrication for frames, reinforcements, and heavy-duty components used in commercial settings.</p>
+            <p>Frames, reinforcements, and heavy-duty fabricated components for commercial and contractor-led work.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">04</span><p class="service-label">Material flexibility</p></div>
-            <h3>Steel and Aluminum Fabrication</h3>
-            <p>Custom work for common fabrication projects using steel, aluminum, and other job-appropriate metals.</p>
+            <div class="service-card-top"><span class="service-index">04</span><p class="service-label">Common metals, clean fit and finish</p></div>
+            <h3>Steel &amp; Aluminum Fabrication</h3>
+            <p>Custom fabrication for common metal projects that need strength, clean lines, and reliable fitment.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">05</span><p class="service-label">Job-site support</p></div>
+            <div class="service-card-top"><span class="service-index">05</span><p class="service-label">Handled where the install happens</p></div>
             <h3>On-Site Fabrication Adjustments</h3>
-            <p>Field modifications and fabrication support when dimensions, fit, or access need to be handled on site.</p>
+            <p>Field modifications and fitment changes when dimensions, access, or layout need to be solved on site.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">06</span><p class="service-label">Repair and rebuild</p></div>
+            <div class="service-card-top"><span class="service-index">06</span><p class="service-label">Repair, replace, and rebuild</p></div>
             <h3>Replacement Metal Components</h3>
-            <p>New fabricated parts for worn, damaged, or outdated metal features that need reliable replacement.</p>
+            <p>New fabricated parts for damaged or outdated metal features that need dependable replacement.</p>
           </article>
+        </div>
+        <div class="services-cta-bar">
+          <p>Need a fabricated part, frame, support, or custom metal solution? Tell us what needs to be built.</p>
+          <div class="services-cta-actions">
+            <a class="button button-primary" href="#quote-anchor">Get My Estimate</a>
+            <a class="button button-secondary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call (954) 448-1197</a>
+          </div>
         </div>
       </section>
 

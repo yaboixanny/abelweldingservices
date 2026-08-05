@@ -11,8 +11,17 @@
       gtag("config", "AW-18290450782");
     </script>
     <script>
+      function updateTrackedPhoneNumbers(formatted_number, mobile_number) {
+        const phonePattern = /\(?954\)?[-.\s]*448[-.\s]*1197/g;
+        document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+          link.href = "tel:" + mobile_number;
+          link.textContent = link.textContent.replace(phonePattern, formatted_number);
+        });
+      }
+
       gtag("config", "AW-18290450782/YguZCLyflNAcEN7CyJFE", {
-        phone_conversion_number: "(954) 448-1197"
+        phone_conversion_number: "(954) 448-1197",
+        phone_conversion_callback: updateTrackedPhoneNumbers
       });
     </script>
     <meta charset="UTF-8" />
@@ -85,11 +94,11 @@
           <div class="hero-copy">
             <p class="eyebrow">Fort Lauderdale industrial welding</p>
             <h1>Industrial Welding in Fort Lauderdale</h1>
-            <p class="hero-text">
-              Abel Welding Services provides industrial welding support for plants, facilities,
-              warehouses, structural steel, heavy-duty repairs, equipment supports, and active
-              commercial job sites across Fort Lauderdale.
-            </p>
+            <ul class="hero-text hero-bullets">
+              <li>Industrial welding for facilities, structural steel, and heavy-duty repairs</li>
+              <li>On-site support for contractors, warehouses, and active job sites</li>
+              <li>Free estimates with clear scope and pricing up front</li>
+            </ul>
             <div class="hero-actions">
               <a class="button button-primary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call Now: (954) 448-1197</a>
             </div>
@@ -157,51 +166,67 @@
       <section class="section services">
         <div class="section-heading">
           <p class="eyebrow">Industrial welding services</p>
-          <h2>Industrial Welding Solutions</h2>
+          <h2>Industrial Welding in Fort Lauderdale</h2>
           <p>
-            Welding support for contractors, industrial facilities, warehouses, fabrication shops,
-            and commercial properties that need reliable heavy-duty metalwork.
+            Heavy-duty welding support for contractors, industrial facilities, warehouses, and
+            commercial properties that need dependable metalwork and job-site coordination.
           </p>
         </div>
         <div class="service-grid">
           <article class="service-card service-card-featured">
-            <p class="service-kicker">Fort Lauderdale Industrial Welding</p>
-            <h3>Built for structural steel, plant repairs, equipment support, and job-site coordination</h3>
+            <p class="service-kicker">Heavy-Duty Work. Clear Coordination.</p>
+            <h3>Need industrial welding that can handle structural steel, active facilities, and demanding site conditions?</h3>
             <p>
-              Abel Welding Services handles industrial welding with a focus on strength,
-              safety, schedule awareness, and dependable execution.
+              Industrial welding support across Fort Lauderdale with practical planning, dependable execution,
+              and clean communication for facilities, contractors, and commercial projects.
             </p>
+            <ul class="service-feature-list">
+              <li>Structural, repair, and facility welding</li>
+              <li>Contractor, warehouse, and plant support</li>
+              <li>Free estimates before work starts</li>
+            </ul>
+            <div class="service-feature-actions">
+              <a class="button button-primary" href="#quote-anchor">Request Estimate</a>
+              <a class="button button-secondary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call Now</a>
+            </div>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">01</span><p class="service-label">Heavy-duty repairs</p></div>
+            <div class="service-card-top"><span class="service-index">01</span><p class="service-label">Wear, damage, and reinforcement</p></div>
             <h3>Industrial Repair Welding</h3>
-            <p>Welding repairs for damaged industrial metal components, steel supports, and worn structural assemblies.</p>
+            <p>Heavy-duty repairs for worn, damaged, or high-stress metal components that need dependable reinforcement.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">02</span><p class="service-label">Facility-ready</p></div>
+            <div class="service-card-top"><span class="service-index">02</span><p class="service-label">Plants, warehouses, and active facilities</p></div>
             <h3>Plant and Facility Welding</h3>
             <p>Industrial welding support for buildings, process areas, warehouses, and operational commercial spaces.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">03</span><p class="service-label">Structural support</p></div>
+            <div class="service-card-top"><span class="service-index">03</span><p class="service-label">Frames, columns, braces, and supports</p></div>
             <h3>Structural Steel Welding</h3>
-            <p>Welding for steel frames, columns, braces, platforms, supports, and other structural metalwork.</p>
+            <p>Steel frames, columns, braces, platforms, and structural supports welded for strength and reliability.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">04</span><p class="service-label">Field coordination</p></div>
+            <div class="service-card-top"><span class="service-index">04</span><p class="service-label">Handled at the job site</p></div>
             <h3>On-Site Industrial Welding</h3>
-            <p>Job-site welding for fixed-location assemblies, industrial improvements, and active project support.</p>
+            <p>Job-site welding for fixed assemblies, industrial improvements, and active project support that cannot be moved.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">05</span><p class="service-label">Custom components</p></div>
+            <div class="service-card-top"><span class="service-index">05</span><p class="service-label">Brackets, supports, and repair parts</p></div>
             <h3>Industrial Fabrication Support</h3>
             <p>Fabrication and welding for industrial brackets, supports, repair components, and project-specific metalwork.</p>
           </article>
           <article class="service-card">
-            <div class="service-card-top"><span class="service-index">06</span><p class="service-label">Commercial and contractor</p></div>
+            <div class="service-card-top"><span class="service-index">06</span><p class="service-label">Equipment access and work platforms</p></div>
             <h3>Equipment and Access Welding</h3>
-            <p>Welding support around industrial equipment, platforms, stairs, rails, and access structures.</p>
+            <p>Welding around industrial equipment, platforms, stairs, rails, and other access structures.</p>
           </article>
+        </div>
+        <div class="services-cta-bar">
+          <p>Need industrial welding for a repair, facility upgrade, or structural steel scope? Tell us the site conditions and timeline.</p>
+          <div class="services-cta-actions">
+            <a class="button button-primary" href="#quote-anchor">Get My Estimate</a>
+            <a class="button button-secondary" href="tel:+19544481197" onclick="gtag('event', 'conversion', {'send_to': 'AW-18290450782/YguZCLyflNAcEN7CyJFE'});">Call (954) 448-1197</a>
+          </div>
         </div>
       </section>
 
