@@ -474,8 +474,8 @@
           return;
         }
 
-        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-        desktopEstimateWidget.classList.toggle("is-visible", window.scrollY >= heroBottom);
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        desktopEstimateWidget.classList.toggle("is-visible", heroBottom <= 0);
       }
 
       function updateMobileCta() {
