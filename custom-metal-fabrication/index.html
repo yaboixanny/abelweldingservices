@@ -328,7 +328,26 @@
     </div>
     <script src="../form-tracking.js"></script>
     <script>
+      const heroSection = document.querySelector(".hero");
+      const desktopEstimateWidget = document.querySelector(".desktop-estimate-widget");
       const mobileCta = document.querySelector(".mobile-cta");
+
+      function updateDesktopEstimateWidget() {
+        if (!desktopEstimateWidget) return;
+
+        if (window.innerWidth <= 980) {
+          desktopEstimateWidget.classList.remove("is-visible");
+          return;
+        }
+
+        if (!heroSection) {
+          desktopEstimateWidget.classList.add("is-visible");
+          return;
+        }
+
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        desktopEstimateWidget.classList.toggle("is-visible", heroBottom <= 0);
+      }
 
       function updateMobileCta() {
         if (!mobileCta) return;
@@ -343,8 +362,11 @@
         mobileCta.classList.toggle("is-visible", window.scrollY > threshold);
       }
 
+      updateDesktopEstimateWidget();
       updateMobileCta();
+      window.addEventListener("scroll", updateDesktopEstimateWidget, { passive: true });
       window.addEventListener("scroll", updateMobileCta, { passive: true });
+      window.addEventListener("resize", updateDesktopEstimateWidget);
       window.addEventListener("resize", updateMobileCta);
     </script>
   </body>
