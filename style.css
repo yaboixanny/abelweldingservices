@@ -796,6 +796,10 @@ select {
 }
 
 @media (max-width: 720px) {
+  .hero-copy > .eyebrow {
+    display: none;
+  }
+
   .topbar {
     padding: 0.7rem 0.9rem;
     gap: 0.6rem;
