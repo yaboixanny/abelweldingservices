@@ -231,7 +231,7 @@ select {
 }
 
 .hero-google-reviews {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.7rem;
   width: fit-content;
@@ -253,11 +253,12 @@ select {
   flex: 0 0 2rem;
   border-radius: 50%;
   background: #fff;
-  font-family: Arial, sans-serif;
-  font-size: 1.3rem;
-  font-weight: 800;
-  line-height: 1;
-  color: #4285f4;
+}
+
+.google-review-mark img {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .google-review-copy {
@@ -902,6 +903,10 @@ select {
   .hero-actions .button {
     width: 100%;
     max-width: 22rem;
+  }
+
+  .hero-google-reviews {
+    margin-inline: auto;
   }
 
   .service-feature-actions,
