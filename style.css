@@ -906,7 +906,7 @@ select {
   }
 
   .hero-google-reviews {
-    margin-inline: auto;
+    margin: 0.6rem auto 0;
   }
 
   .service-feature-actions,
