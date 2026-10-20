@@ -243,6 +243,23 @@ select {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
   color: #fff;
   backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.hero-google-reviews:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.hero-google-reviews:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+#client-feedback {
+  scroll-margin-top: 5rem;
 }
 
 .google-review-mark {
