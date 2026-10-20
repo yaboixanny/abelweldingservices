@@ -230,6 +230,62 @@ select {
   color: rgba(255, 240, 214, 0.86);
 }
 
+.hero-google-reviews {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: fit-content;
+  margin: 0;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
+
+.google-review-mark {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  border-radius: 50%;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #4285f4;
+}
+
+.google-review-copy {
+  display: grid;
+  gap: 0.05rem;
+  line-height: 1.1;
+}
+
+.google-review-copy strong {
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.google-review-copy span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.google-review-stars {
+  color: #fbbc04;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
 .hero .brand-name,
 .hero h1,
 .hero .eyebrow {
